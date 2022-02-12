@@ -5,7 +5,7 @@ import numpy as np
 import base64
 import cv2
 
-import face_enhancement
+#import face_enhancement
 
 # uvicorn api_test:app --reload
 
@@ -24,12 +24,11 @@ def decode_base64_to_np(input: str) -> np.ndarray:
     return image_result
 
 def improve_image(orig_image):
-    faceenhancer = face_enhancement.FaceEnhancement(size=512, model="GPEN-BFR-512", use_sr="store_true", sr_model="rrdb_realesrnet_psnr", channel_multiplier=2, narrow=1, device='cuda')
+    #faceenhancer = face_enhancement.FaceEnhancement(size=512, model="GPEN-BFR-512", use_sr="store_true", sr_model="rrdb_realesrnet_psnr", channel_multiplier=2, narrow=1, device='cuda')
+    #np_img = np.array(orig_image)
+    #generated = faceenhancer.process(np_img)
 
-    np_img = np.array(orig_image)
-    generated = faceenhancer.process(np_img)
-
-    return generated
+    return orig_image
 
 @app.post("/base64file")
 async def use_base64file(data: dict=None):

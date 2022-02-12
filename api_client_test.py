@@ -25,7 +25,7 @@ def decode_base64_to_np(input: str) -> np.ndarray:
 '''
 Encode Image to Base64,
 np.ndarray -> str'''
-path_to_img = r"./examples/imgs/1.jpg"
+path_to_img = r"./imgs/1.jpg"
 image = imread(path_to_img)
 image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 base64_str = encode_np_to_base64(image)
